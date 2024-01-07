@@ -18,8 +18,5 @@ public class StudentapiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(StudentapiApplication.class, args);
 	}
-	@GetMapping
-	public List<Student> student(){
-		return List.of(new Student(1L, "Munyui", "munyui@gmail.com", LocalDate.of( 2000, Month.APRIL, 12 ), 24 ));
-	}
+
 }

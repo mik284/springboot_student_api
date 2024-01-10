@@ -27,7 +27,6 @@ public class StudentConfig {
                     "eric@gmail.com",
                     LocalDate.of(2004, APRIL, 12)
             );
-
             repository.saveAll(List.of(munyui, eric));
         };
     }

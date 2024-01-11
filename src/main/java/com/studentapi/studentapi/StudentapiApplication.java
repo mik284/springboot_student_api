@@ -13,7 +13,6 @@ import java.util.List;
 
 @SpringBootApplication
 public class StudentapiApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(StudentapiApplication.class, args);
 	}

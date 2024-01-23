@@ -8,7 +8,12 @@ import java.time.Period;
 import static jakarta.persistence.GenerationType.*;
 
 @Entity(name = "Student")
-@Table
+@Table(
+        name = "student",
+        uniqueConstraints ={
+                @UniqueConstraint(name = "student_email_unique", columnNames ="email" )
+        }
+)
 public class Student {
     @Id
     @SequenceGenerator(
@@ -29,7 +34,6 @@ public class Student {
     private String name;
 
     @Column(
-            unique = true,
             nullable = false
     )
     private String email;

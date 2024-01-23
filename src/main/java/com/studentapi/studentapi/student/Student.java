@@ -27,6 +27,11 @@ public class Student {
             columnDefinition = "TEXT"
     )
     private String name;
+
+    @Column(
+            unique = true,
+            nullable = false
+    )
     private String email;
     private LocalDate dob;
     @Transient

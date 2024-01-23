@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
 
+import static jakarta.persistence.GenerationType.*;
+
 @Entity(name = "Student")
 @Table
 public class Student {
@@ -16,10 +18,14 @@ public class Student {
     )
 
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = SEQUENCE,
             generator = "student_sequence"
     )
     private Long id;
+    @Column(
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
     private String name;
     private String email;
     private LocalDate dob;

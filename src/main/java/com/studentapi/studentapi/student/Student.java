@@ -5,8 +5,15 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
 
-@Entity
-@Table
+import static jakarta.persistence.GenerationType.*;
+
+@Entity(name = "Student")
+@Table(
+        name = "student",
+        uniqueConstraints ={
+                @UniqueConstraint(name = "student_email_unique", columnNames ="email" )
+        }
+)
 public class Student {
     @Id
     @SequenceGenerator(
@@ -16,11 +23,19 @@ public class Student {
     )
 
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = SEQUENCE,
             generator = "student_sequence"
     )
     private Long id;
+    @Column(
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
     private String name;
+
+    @Column(
+            nullable = false
+    )
     private String email;
     private LocalDate dob;
     @Transient

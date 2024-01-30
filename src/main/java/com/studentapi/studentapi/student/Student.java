@@ -45,12 +45,6 @@ public class Student {
     public Student() {
     }
 
-//    public Student(String name, String email, LocalDate dob) {
-//        this.name = name;
-//        this.email = email;
-//        this.dob = dob;
-//    }
-
     public Student(String name, String email, LocalDate dob) {
         this.name = name;
         this.email = email;
